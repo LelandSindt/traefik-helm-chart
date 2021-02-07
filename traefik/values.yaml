@@ -177,6 +177,9 @@ logs:
 globalArguments:
   - "--global.checknewversion"
   - "--global.sendanonymoususage"
+  - "--certificatesresolvers.myresolver.acme.email=llspam@sway.com"
+  - "--certificatesresolvers.myresolver.acme.storage=/data/acme.json"
+  - "--certificatesresolvers.myresolver.acme.tlschallenge"
 
 #
 # Configure Traefik static configuration
@@ -326,7 +329,7 @@ autoscaling:
 # - "--certificatesresolvers.le.acme.storage=/data/acme.json"
 # It will persist TLS certificates.
 persistence:
-  enabled: false
+  enabled: true
 #  existingClaim: ""
   accessMode: ReadWriteOnce
   size: 128Mi
